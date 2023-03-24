@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5F48B589-8F9C-4051-9BA0-93BB5A41ED24"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE179719-1D5D-4C7F-B09E-B8668209442D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "task1-week2/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BE179719-1D5D-4C7F-B09E-B8668209442D - b5bf0fce6afefae6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "task1_week2.HomeViewController.cellId.getter : Swift.String"
+                  moduleName = "task1-week2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zies/Developer/ios/phincon/week%202/task1-week2/task1-week2/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "BE179719-1D5D-4C7F-B09E-B8668209442D - ea7b7747410c8add"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "task1_week2.HomeViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; task1_week2.HomeViewController"
+                  moduleName = "task1-week2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zies/Developer/ios/phincon/week%202/task1-week2/task1-week2/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "BE179719-1D5D-4C7F-B09E-B8668209442D - ac410b8a328700da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "task1_week2.HomeViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;task1_week2.HomeViewController&gt;"
+                  moduleName = "task1-week2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zies/Developer/ios/phincon/week%202/task1-week2/task1-week2/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
