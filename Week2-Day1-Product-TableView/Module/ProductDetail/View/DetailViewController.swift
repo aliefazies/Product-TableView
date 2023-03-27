@@ -8,6 +8,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var product: Product?
+    
     let productDetailImage: UIImageView = {
         let iv = UIImageView()
         return iv
@@ -90,7 +93,9 @@ class DetailViewController: UIViewController {
         productLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             productLabel.topAnchor.constraint(equalTo: productDetailImage.bottomAnchor, constant: 24),
-            productLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24)
+            productLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+//            productLabel.trailingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 16),
+            productLabel.widthAnchor.constraint(equalToConstant: 200)
         ])
         productLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
     }
@@ -207,23 +212,38 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         setup()
         
+        productLabel.text = product?.title
+        productLabel.numberOfLines = 3
+        productDetailImage.imageFromServerURL(product?.image ?? "", placeHolder: UIImage(systemName: "chevron.left"))
+        productDetailImage.contentMode = .scaleAspectFit
+        priceLabel.text = "$\(product?.price ?? 0)"
+        detailStockLabel.text = "Stock                  : \(product?.category.count ?? 0)"
+        detailDescLabel.text = product?.description
+        detailDescLabel.textAlignment = .justified
+        detailSizeLabel.text = "Category            : \(product?.category ?? "")"
+        detailWeightLabel.text = "Rating                 : \(product?.rating.rate ?? 0)"
+//        detailTypeLabel.text = "Type                     : Accesories"
+//        detailDescLabel.text = """
+        
     }
 
 }
 
 extension UIViewController {
-    func navigateToDetailView(_ jam: Jam? = nil) {
+    func navigateToDetailView(product: Product) {
+//        let vc = DetailViewController()
+//        vc.productLabel.text = jam?.nama
+//        vc.productDetailImage.image = UIImage(named: jam?.namaGambar ?? "")
+//        vc.priceLabel.text = "Rp\(jam?.harga ?? "0")"
+//        vc.detailStockLabel.text = "Stock                   : \(jam?.stok ?? 0)"
+//        vc.detailSizeLabel.text = "Size                      : --"
+//        vc.detailWeightLabel.text = "Weight                 : \(jam?.berat ?? 0)"
+//        vc.detailTypeLabel.text = "Type                     : Accesories"
+//        vc.detailDescLabel.text = """
+//Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et integer turpis fermentum pulvinar adipiscing accumsan, dignissim viverra. Quisque hendrerit ac ipsum, malesuada odio netus. Eu, mauris ullamcorper neque ullamcorper arcu. Amet, condimentum adipiscing enim eu feugiat feugiat pharetra, tristique. Interdum ipsum amet, a nec. Fermentum in viverra suscipit at at sit. Metus condimentum augue erat.
+//"""
         let vc = DetailViewController()
-        vc.productLabel.text = jam?.nama
-        vc.productDetailImage.image = UIImage(named: jam?.namaGambar ?? "")
-        vc.priceLabel.text = "Rp\(jam?.harga ?? "0")"
-        vc.detailStockLabel.text = "Stock                   : \(jam?.stok ?? 0)"
-        vc.detailSizeLabel.text = "Size                      : --"
-        vc.detailWeightLabel.text = "Weight                 : \(jam?.berat ?? 0)"
-        vc.detailTypeLabel.text = "Type                     : Accesories"
-        vc.detailDescLabel.text = """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et integer turpis fermentum pulvinar adipiscing accumsan, dignissim viverra. Quisque hendrerit ac ipsum, malesuada odio netus. Eu, mauris ullamcorper neque ullamcorper arcu. Amet, condimentum adipiscing enim eu feugiat feugiat pharetra, tristique. Interdum ipsum amet, a nec. Fermentum in viverra suscipit at at sit. Metus condimentum augue erat.
-"""
+        vc.product = product
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

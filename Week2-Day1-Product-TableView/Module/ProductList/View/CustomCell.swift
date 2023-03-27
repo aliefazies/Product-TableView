@@ -9,13 +9,18 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     
-    override func layoutSubviews() {
-         super.layoutSubviews()
-         let bottomSpace: CGFloat = 10.0 // Let's assume the space you want is 10
-         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: bottomSpace, right: 0))
-    }
+//    override func layoutSubviews() {
+//         super.layoutSubviews()
+//         let bottomSpace: CGFloat = 10.0 // Let's assume the space you want is 10
+//         self.contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: bottomSpace, right: 0))
+//    }
     
     static let identifier: String = "cellId"
+    
+    let cardView: UIView = {
+        let vw = UIView()
+        return vw
+    }()
     
     let productImage: UIImageView = {
         let iv = UIImageView()
@@ -51,28 +56,23 @@ class CustomCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setup() {
-        addSubview(productImage)
-        addSubview(productNameLabel)
-        addSubview(productDateLabel)
-        addSubview(productPriceLabel)
-        addSubview(productRating)
-        addSubview(wishlistImage)
+        contentView.addSubview(cardView)
+        cardView.addSubview(productImage)
+        cardView.addSubview(productNameLabel)
+        cardView.addSubview(productDateLabel)
+        cardView.addSubview(productPriceLabel)
+        cardView.addSubview(productRating)
+        cardView.addSubview(wishlistImage)
         
         selectionStyle = .none
         
         productImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            productImage.topAnchor.constraint(equalTo: topAnchor),
-            productImage.leadingAnchor.constraint(equalTo: leadingAnchor),
-            productImage.bottomAnchor.constraint(equalTo: bottomAnchor),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             productImage.widthAnchor.constraint(equalToConstant: 120),
             productImage.heightAnchor.constraint(equalToConstant: 120)
         ])
@@ -81,9 +81,11 @@ class CustomCell: UITableViewCell {
         
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            productNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14),
+            productNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14),
             productNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 12),
+            productNameLabel.widthAnchor.constraint(equalToConstant: 200)
         ])
+        productNameLabel.numberOfLines = 3
         productNameLabel.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         
         productPriceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -96,15 +98,15 @@ class CustomCell: UITableViewCell {
         
         productDateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            productDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            productDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6)
+            productDateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            productDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -6)
         ])
         productDateLabel.font = UIFont.systemFont(ofSize: 8, weight: .thin)
         
         wishlistImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            wishlistImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            wishlistImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            wishlistImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            wishlistImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             wishlistImage.widthAnchor.constraint(equalToConstant: 20),
             wishlistImage.heightAnchor.constraint(equalToConstant: 20),
         ])
@@ -113,6 +115,13 @@ class CustomCell: UITableViewCell {
         wishlistImage.tintColor = .black
         
         
+    }
+    
+    func setupUI(product: Product) {
+        productNameLabel.text = product.title
+        productImage.imageFromServerURL(product.image ?? "", placeHolder: UIImage(systemName: "chevron.left"))
+        productPriceLabel.text = "$\(product.price )"
+        productDateLabel.text = product.category ?? ""
     }
 
 }
