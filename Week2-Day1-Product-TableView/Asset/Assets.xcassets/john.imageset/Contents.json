@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "mulai-tayang-john-wick-trending-topic-di-medsos-MG5HpcO7Mt.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

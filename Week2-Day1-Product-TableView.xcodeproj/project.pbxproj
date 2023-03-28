@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01121FC329D29A3E0006B5F6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01121FC229D29A2B0006B5F6 /* TabBar.swift */; };
+		01121FC829D29ACB0006B5F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01121FC729D29ACB0006B5F6 /* ProfileViewController.swift */; };
+		01121FCA29D2AD4F0006B5F6 /* button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01121FC929D2AD4F0006B5F6 /* button.xib */; };
 		016FAC6A29A321050012CE93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016FAC6929A321050012CE93 /* AppDelegate.swift */; };
 		016FAC6C29A321050012CE93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016FAC6B29A321050012CE93 /* SceneDelegate.swift */; };
 		016FAC6E29A321050012CE93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016FAC6D29A321050012CE93 /* HomeViewController.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01121FC229D29A2B0006B5F6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		01121FC729D29ACB0006B5F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		01121FC929D2AD4F0006B5F6 /* button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = button.xib; sourceTree = "<group>"; };
 		016FAC6629A321050012CE93 /* Week2-Day1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Week2-Day1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		016FAC6929A321050012CE93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		016FAC6B29A321050012CE93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01121FC429D29AA00006B5F6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				01121FC729D29ACB0006B5F6 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		016FAC5D29A321050012CE93 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 				016FAC8729A34F200012CE93 /* Extension */,
 				01DD5BAA29CD613C00CCB09F /* Storyboard */,
 				016FAC7729A321070012CE93 /* Info.plist */,
+				01121FC929D2AD4F0006B5F6 /* button.xib */,
 			);
 			path = "Week2-Day1-Product-TableView";
 			sourceTree = "<group>";
@@ -95,6 +110,8 @@
 		01DD5BA029CD609300CCB09F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				01121FC429D29AA00006B5F6 /* Profile */,
+				01121FC229D29A2B0006B5F6 /* TabBar.swift */,
 				01DD5BA229CD60AA00CCB09F /* ProductDetail */,
 				01DD5BA129CD60A200CCB09F /* ProductList */,
 			);
@@ -263,6 +280,7 @@
 			files = (
 				016FAC7629A321070012CE93 /* LaunchScreen.storyboard in Resources */,
 				016FAC7329A321070012CE93 /* Assets.xcassets in Resources */,
+				01121FCA29D2AD4F0006B5F6 /* button.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +295,13 @@
 				016FAC6E29A321050012CE93 /* HomeViewController.swift in Sources */,
 				01A9E98429CD7FC900AEB51C /* UIImageViewExtension.swift in Sources */,
 				01EE593629CD716200576FDC /* Product.swift in Sources */,
+				01121FC829D29ACB0006B5F6 /* ProfileViewController.swift in Sources */,
 				016FAC8029A32A490012CE93 /* JamModel.swift in Sources */,
 				016FAC6A29A321050012CE93 /* AppDelegate.swift in Sources */,
 				01EE593A29CD72B300576FDC /* ProductProvider.swift in Sources */,
 				016FAC8229A330150012CE93 /* DetailViewController.swift in Sources */,
 				016FAC7E29A324C50012CE93 /* CustomCell.swift in Sources */,
+				01121FC329D29A3E0006B5F6 /* TabBar.swift in Sources */,
 				01EE593829CD723D00576FDC /* Rating.swift in Sources */,
 				016FAC6C29A321050012CE93 /* SceneDelegate.swift in Sources */,
 				016FAC8C29A37B510012CE93 /* TableViewCellExtension.swift in Sources */,
