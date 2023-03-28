@@ -34,5 +34,4 @@ class TabBar: UITabBarController {
             createNavController(for: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person")!)
         ]
     }
-
 }
